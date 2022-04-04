@@ -2,7 +2,7 @@
 toc: true
 layout: post
 comments: true
-categories: ["competitive programming", "c++"]
+categories: ["competitive programming", "C++"]
 title: Pointers
 author: Priyanshu Tiwari
 description: Session II | Competitive Programming | C++
@@ -13,6 +13,7 @@ description: Session II | Competitive Programming | C++
 * To store the address of some variables from the symbol table.
 * This address can be retrieved using **&** and is stored in hexadecimal form. Eg : ``0x7ffc40fe4b94``
 * We can declare a pointer using ``data_type * name``
+* We state the data_type while declaring pointers to make the de-referencing process much easier.
 
 ```cpp
 #include<bits/stdc++.h>
@@ -168,6 +169,8 @@ While executing the above code, the compiler will first create a temporary space
 
 ## Pointers and functions
 
+* Array is always passed as a pointer to a function in c++.
+
 ```cpp
 void print(int* p){
     cout << *p << endl;
@@ -196,3 +199,88 @@ int main(){
 }
 ```
 
+> Output
+
+```
+10
+10
+10
+11
+```
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int size1(int a[]){
+    return sizeof(a);
+}
+
+int size2(int * a){
+    return sizeof(a);
+}
+
+void print(int b[]){
+    cout << *b << endl;
+}
+
+int main(){
+
+    int a[10];
+    int b[] = {1, 2, 3, 4, 5};
+
+    cout << sizeof(a) << endl;
+    cout << size1(a) << endl;
+    cout << size2(a) << endl;
+
+    print(b);
+    print(b+1);
+    print(b+3);
+}
+```
+
+> Output
+
+```cpp
+40
+8
+8
+1
+2
+4
+```
+
+## Pointer to a Pointer : Double Pointers
+
+```cpp
+int main(){
+
+    int i=10;
+    int* p = &i;
+    int** pp = &p;
+
+    cout << &i << endl;
+    cout << p << endl;
+    cout << *pp << endl;
+
+    cout << &p << endl;
+    cout << pp << endl;
+
+    cout << i << endl;
+    cout << *p << endl;
+    cout << **pp << endl;
+}
+```
+
+> Output
+
+```
+0x7ffcfa610594
+0x7ffcfa610594
+0x7ffcfa610594
+0x7ffcfa610598
+0x7ffcfa610598
+10
+10
+10
+```
