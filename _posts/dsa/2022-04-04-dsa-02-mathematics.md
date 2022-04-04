@@ -85,8 +85,6 @@ $S_{n} = a*(r^{n} - 1)/ r-1$
 
 1. Sum of infinite terms $\rightarrow$
 
-This works only if $|r|<1$
-
 $S_{\infty} = \frac{a}{1-r}$
 
 ### Quadratic formula
@@ -95,11 +93,10 @@ $S_{\infty} = \frac{a}{1-r}$
 
 $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.
 
-1. $D = b^{2} - 4ac$
-
-- D < 0 : Imaginary roots
-- D = 0 : Two equal roots
-- D > 0 : Two distinct roots
+- $D = b^{2} - 4ac$
+    - D < 0 : Imaginary roots
+    - D = 0 : Two equal roots
+    - D > 0 : Two distinct roots
 
 ### Prime numbers
 
