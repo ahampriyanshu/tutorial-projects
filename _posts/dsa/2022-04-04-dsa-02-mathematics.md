@@ -57,17 +57,17 @@ a<sub>n</sub> = a + (n-1).d
 
 We know that
 
-$\rightarrow$ avg = sum/n
+$\rightarrow avg = \frac{sum}{n}$
 
-$\rightarrow$ sum = avg*n
+$\rightarrow sum = avg \times n$
 
-In case of evenly distributed numbers
+And in case of evenly distributed numbers
 
-$\rightarrow$ $avg = \frac{sum}{n}$
+$\rightarrow avg = \frac{first + last}{2}$
 
-$\rightarrow$ $sum = \frac{(a + a + (n-1).d)n}{2}$
+$\rightarrow sum = \frac{(a + a + (n-1).d)n}{2}$
 
-$\rightarrow$ $sum = \frac{n(2a + (n-1)*d)}{2}$
+$\rightarrow sum = \frac{n(2a + (n-1)*d)}{2}$
 
 ### Geometric progression
 
@@ -91,8 +91,8 @@ $S_{\infty} = \frac{a}{1-r}$
 
 1.Roots of quad eq. 
 
-$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.
-
+- $ax^{2} + by + c = 0$
+- $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.
 - $D = b^{2} - 4ac$
     - D < 0 : Imaginary roots
     - D = 0 : Two equal roots
