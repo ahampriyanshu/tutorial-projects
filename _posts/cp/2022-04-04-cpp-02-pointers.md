@@ -2,7 +2,7 @@
 toc: true
 layout: post
 comments: true
-categories: ["competitive programming", "C++"]
+categories: ["competitive-programming", "C++"]
 title: Pointers
 author: Priyanshu Tiwari
 description: Session II | Competitive Programming | C++

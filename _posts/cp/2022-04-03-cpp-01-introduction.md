@@ -2,7 +2,7 @@
 toc: true
 layout: post
 comments: true
-categories: ["competitive programming", "C++"]
+categories: ["competitive-programming", "C++"]
 title: Introduction
 author: Priyanshu Tiwari
 description: Session I | Competitive Programming | C++
