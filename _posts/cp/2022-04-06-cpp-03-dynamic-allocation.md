@@ -3,7 +3,7 @@ toc: true
 layout: post
 comments: true
 categories: ["competitive-programming", "C++"]
-title: Dynamic Allocation
+title: Dynamic Allocation, Const, Macros
 author: Priyanshu Tiwari
 description: Session III | Competitive Programming | C++
 ---
@@ -214,17 +214,84 @@ int main(){
 
     int d;
 
+    // long and naive
     if(a > b) d = a;
     else d = b;
 
+    // diff. to read
     int e = a > b ? a : b;
 
+    // degrades performance as the instruction flow breaks for a moment
     int f = max(a, b);
 
+    // at compile time whole code of the inline function gets inserted or substituted, therefore preserving the performance
     int g = max_inline(a, b);
 }
 ```
 
-{% include alert.html text="Normally compiler supports 1 to 3 set of instructions as **inline** func, more than that is treated as a normal func only." %}
+Normally compiler supports 1 to 3 set of instructions as **inline** func, more than that is treated as a normal func only.
+
+### Default Func
+
+```cpp
+int sum(int a[], int size, int start = 0){
+    int ans = 0;
+    for(int i=start; i<size; i++)
+        ans += a[i];
+}
+
+int main(){
+
+    int a[20];
+
+    cout << sum(a, 20) << endl;
+    cout << sum(a, 20, 5) << endl;
+}
+```
 
 
+## Constant Variables
+
+```cpp
+
+const int i = 10; ✅
+int const i = 10; ✅
+
+const int i; ❌
+
+const int i = 10;
+i++; ❌
+
+int i = 10;
+const int& j = i;
+i++; ✅
+j++; ❌
+
+const int i = 10;
+const int& j = i; ✅
+
+const int i = 10; 
+int& j = i; ❌
+
+const int i = 10;
+int* j = &i; ❌
+
+
+int i = 10;
+int j = 12;
+
+
+int const  * a = &i;
+int * const b = &i;
+int const * const c = &i;
+
+a = &j;  ✅
+(*a)++;  ❌
+
+b = &j;  ❌
+(*b)++;  ✅
+
+c = &j;  ❌
+(*c)++;  ❌
+
+```

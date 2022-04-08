@@ -71,11 +71,9 @@ $\rightarrow sum = \frac{n(2a + (n-1)*d)}{2}$
 
 ### Geometric progression
 
-```
 2, 4, 16, 32, 64 ......
 
 a, $a.r^{1}$,  $a.r^{2}$, $a.r^{3}$, ... $r^{n-1}$
-```
 
 Nth term $\rightarrow$
 
@@ -94,7 +92,9 @@ $S_{\infty} = \frac{a}{1-r}$
 1.Roots of quad eq. 
 
 $ax^{2} + by + c = 0$
+
 $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.
+
 $D = b^{2} - 4ac$
     * D < 0 : Imaginary roots
     * D = 0 : Two equal roots
