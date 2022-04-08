@@ -3,9 +3,9 @@ toc: true
 layout: post
 comments: true
 categories: ["competitive-programming", "C++"]
-title: Dynamic Allocation, Const, Macros
+title: 03. Competitive Programming 
 author: Priyanshu Tiwari
-description: Session III | Competitive Programming | C++
+description: typecasting, reference variables, dynamic allocation, pre-processors, macros, define, const and global variables, inline functions
 ---
 
 ## Typecasting

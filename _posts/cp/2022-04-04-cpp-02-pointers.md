@@ -3,9 +3,9 @@ toc: true
 layout: post
 comments: true
 categories: ["competitive-programming", "C++"]
-title: Pointers
+title: 02. Competitive Programming 
 author: Priyanshu Tiwari
-description: Session II | Competitive Programming | C++
+description: need of pointers, pointers and array, character array, double pointers
 ---
 
 ## Need of pointers

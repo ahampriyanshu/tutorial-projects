@@ -3,25 +3,25 @@ toc: true
 layout: post
 comments: true
 categories: ["competitive-programming", "C++"]
-title: Introduction
+title: 01. Competitive Programming 
 author: Priyanshu Tiwari
-description: Session I | Competitive Programming | C++
+description: time complexity, space complexity, complexity Graph, possible verdicts
 ---
 
 ## Steps to approach a problem
 
-1. Ready lengthy and unusual paragrams to decode the problem statement.
-1. Observe the input format.
-1. Observe the output format.
-1. Analyze the given contraints
+* Ready lengthy and unusual paragrams to decode the problem statement.
+* Observe the input format.
+* Observe the output format.
+* Analyze the given contraints
     - Time Limit : 0.5s - 4s
     - Memomry Limit : 256MB - 1GB
-1. Find hidden logic/pattern in the sample input and output.
-1. Code
+* Find hidden logic/pattern in the sample input and output.
+* Code
 
 ## Analyzing given constraints
 
-* Conventionally, we can perform 4.10<sup>18</sup> operation in one second.
+Conventionally, we can perform 4.10<sup>18</sup> operation in one second.
 
 ### Complexity Table
 
