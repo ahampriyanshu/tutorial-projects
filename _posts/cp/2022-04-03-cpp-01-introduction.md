@@ -46,6 +46,10 @@ Conventionally, we can perform 4.10<sup>18</sup> operation in one second.
 * Time limit Exceeded
 * Memory Limit Exceeded
 * Compilation Error
+* SIGTSTP/SIGSTOP
+    - Input/Output error.
+    - Giving instruction which is not implemented in GNU library.
+    
 * Runtime Error
     - Divinding by zero
     - Segmentation Fault 
