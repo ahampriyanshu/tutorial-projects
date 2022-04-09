@@ -19,7 +19,7 @@ bool isPossible(vector<int> &stalls, int k, int mid){
     int cowCount = 1;
     int lastPosition = stalls[0];
     for(int i =0; i<stalls.size();i++){
-        if(stalls[i]-lastPosition >= mid){
+	    if(stalls[i]-lastPosition >= mid){
             cowCount++;
             if(cowCount==k)
                 return true;
@@ -145,7 +145,6 @@ class Solution{
 };
 ```
 
-
 ## Chef Restaurant 
 
 Chef is a cook and he has recently opened a restaurant.
@@ -195,4 +194,196 @@ For each person, calculate how long they have to wait (possibly 0 time), or dete
     	}
     	return 0;
     }
+```
+
+
+## Murder
+
+Once detective Saikat was solving a murder case. While going to the crime scene he took the stairs and saw that a number is written on every stair. He found it suspicious and decides to remember all the numbers that he has seen till now. While remembering the numbers he found that he can find some pattern in those numbers. So he decides that for each number on the stairs he will note down the sum of all the numbers previously seen on the stairs which are smaller than the present number. Calculate the sum of all the numbers written on his notes diary.
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+long long merge(long long arr[], long long start, long long mid, long long end) {
+
+    long long ans = 0, i = start, j = mid, k = 0;
+	long long temp[end - start + 1];
+
+	while(i < mid && j <= end){ 
+		if(arr[i] <= arr[j]){
+			ans += arr[i]*(end-j+1)
+			temp[k++] = arr[i++];
+		}
+		else 
+			temp[k++] = arr[j++];
+	}
+
+	while(i < mid) 
+		temp[k++] = arr[i++];
+
+	while(j <= end) 
+		temp[k++] = arr[j++];
+
+	for(i = start; i <= end; i++)
+		arr[i] = temp[i - start];
+		
+	return inversions;
+}
+
+    
+long long merge_sort(long long A[], long long left, long long right){
+        
+    if(left >= right) return 0;
+
+    long long mid = left + (right-left)/2;
+    return merge_sort(A, left, mid) + merge_sort(A, mid+1, right) +  merge(A, left, mid+1, right);
+}
+
+int main() {
+int t;
+    cin>>t;
+    for(int i=0;i<t;i++)
+    {
+        long long n;
+        cin>>n;
+        int arr[n];
+        for(int j=0;j<n;j++)
+            cin>>arr[j];
+        cout<<merge_sort(arr,0,n-1)<<endl;
+    }
+	// Write your code here
+}
+```
+
+##  Distribute Candies
+
+Shaky has N (1<=N<=50000) candy boxes each of them contains a non-zero number of candies (between 1 and 1000000000). Shaky want to distibute these candies among his K (1<=K<=1000000000) IIIT-Delhi students. He want to distibute them in a way such that:
+* All students get equal number of candies.
+* All the candies which a student get must be from a single box only.
+
+As he want to make all of them happy so he want to give as many candies as possible. Help Shaky in finding out what is the maximum number of candies which a student can get.
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {int n,k;
+     cin>>n;
+      int arr[n],ans=0,s;
+     cin>>k;
+     long long max=0;
+     for(int i=0;i<n;i++){
+		cin>>arr[i];
+        max = max(max, arr[i]);
+    }
+     
+	long long start=0,end=max,mid;
+	while(start<=end)
+	{     
+		s=0;
+	  	mid=start+(end-start)/2;
+	   	for(int i=0;i<n;i++)
+	       s+=(arr[i]/mid);
+	 	if(s>=k){
+			ans=mid;
+	     	start=mid+1;
+	 	}
+	 	else 
+	    	end=mid-1;
+	}
+	cout<<ans<<endl;
+    }
+}
+```
+
+## Momos Market
+
+Shreya loves to eat momos. Her mother gives her money to buy vegetables but she manages to save some money out of it daily. After buying vegetables, she goes to "Momos Market", where there are ‘n’ number of shops of momos. Each of the shops of momos has a rate per momo. She visits the market and starts buying momos (one from each shop) starting from the first shop. She will visit the market for ‘q’ days. You have to tell that how many momos she can buy each day if she starts buying from the first shop daily. She cannot use the remaining money of one day on some other day. But she will save them for other expenses in the future, so, you also need to tell the sum of money left with her at the end of each day.
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  long  int n;
+    cin>>n;
+int arr[n];
+    long int s=0;
+    for(int i=0;i<n;i++)
+    {
+        int m;
+        cin>>m;
+        s+=m;
+        arr[i]=s;
+    }
+  long   int q;
+    cin>>q;
+    while(q--)
+    {
+        long long int r;
+        cin>>r;
+        long long int start=0,end=n-1,mid;
+        long  int ans = -1;
+     while(start<=end)
+     {
+         mid=start+(end-start)/2;
+         if(arr[mid]<=r){
+                ans = mid;
+                start=mid+1;
+            }
+            else
+                end=mid-1;
+     }
+     if(ans == -1)
+        cout<<0<<" "<<r<<endl;
+     else
+     cout<<ans+1<<" "<<r-arr[ans]<<endl; 
+    }
+	return 0;
+}
+```
+
+##  Taj Mahal Entry
+
+Taj Mahal is one of the seven wonders of the world. Aahad loves to travel places and wants to visit Taj Mahal. He visited Agra to view Taj Mahal. There is a ticketing system at Taj Mahal. There are total ‘n’ windows which provide the tickets to get entry into Taj Mahal. There are ‘Ai’ people already present at each window to get the tickets. Each window gives ticket to one person in one minute. Initially, Aahad stands in front of the first window. After each minute, if he didn’t get the ticket, he moves on to the next window to get the ticket. If he is at window 1, he will move to 2. If at 2nd, he will move to 3rd. If he is at last window, he will move to 1st again and so on. Find the window number at which he will get the ticket.
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   long n;
+    cin>>n;
+    long long arr[n];
+    for(long i=0;i<n;i++)
+        cin>>arr[i];
+    for(long i=0;i<n;i++)
+    {long long m=arr[i]-i;
+     if(m<0)
+         m=0;
+        long long t=(m)/(n);
+        if((m)%n!=0)
+            t++;
+     if(t<0)
+         t=0;
+        arr[i]=(t*n)+i;
+       
+     }
+    long long min=arr[0];
+    long int m=0;
+     for(long i=0;i<n;i++)
+    {
+         if(arr[i]<min)
+    {
+        min=arr[i];
+        m=i;
+    }}
+    
+        cout<<m+1;
+	return 0;
+}
 ```

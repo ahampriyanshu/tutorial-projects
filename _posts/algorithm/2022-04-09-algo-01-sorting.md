@@ -3,9 +3,9 @@ toc: true
 layout: post
 comments: true
 categories: ["sorting", "algorithms", "C++"]
-title: Sorting Algorithms
+title: 01. Algorithms
 author: Priyanshu Tiwari
-description: Merge, Quick, Radix, Bubble, Heap, Shell, Bucket
+description: Merge, Quick, Radix, Bubble, Heap, Shell, Bucket Sort
 ---
 
 ## Merge Sort
